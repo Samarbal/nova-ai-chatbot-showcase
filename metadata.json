@@ -1,0 +1,8 @@
+{
+  "name": "NOVA — Tech & Lifestyle",
+  "description": "Responsive ecommerce landing page demo for NOVA, a fictional tech accessories brand offering wireless audio, charging hardware, and desk essentials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

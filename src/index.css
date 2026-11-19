@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-cairo: "Cairo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-cobalt: #1629d8;
+  --color-cobalt-deep: #101ea8;
+  --color-lime: #b5f25b;
+  --color-lime-hover: #c5f779;
+  --color-lavender: #ae8cff;
+  --color-ice: #f6f5ff;
+  --color-ice-tint: #eae8fa;
+  --color-ink: #111325;
+  --color-ink-muted: #4b506b;
+  --color-surface: #ffffff;
+}
+
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  html[lang="ar"] body {
+    font-family: var(--font-cairo);
+  }
+
+  html[lang="en"] body {
+    font-family: var(--font-jakarta);
+  }
+
+  body {
+    background-color: var(--color-ice);
+    color: var(--color-ink);
+    overflow-x: hidden;
+  }
+
+  .font-latin {
+    font-family: var(--font-jakarta);
+  }
+}

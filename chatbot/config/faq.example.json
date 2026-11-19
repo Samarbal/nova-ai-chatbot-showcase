@@ -1,0 +1,85 @@
+{
+  "id": "acme-example",
+  "businessName": "Nordic Studio Goods",
+  "isDemo": false,
+  "businessDescription": "Direct-to-consumer minimalist desk lamps, acoustic felt organizers, and tactile everyday carry accessories.",
+  "maxFaqEntries": 15,
+  "unavailableFallback": {
+    "ar": "هذه المعلومة غير متوفرة في قاعدة المعرفة الحالية. يرجى التواصل مع فريق الدعم عبر نموذج التواصل.",
+    "en": "That detail is not available in our current support guide. Please reach out through our contact form for personalized assistance."
+  },
+  "products": [
+    {
+      "id": "desk-lamp-01",
+      "name": { "ar": "مصباح مكتب ألمنيوم", "en": "Halo Aluminum Desk Lamp" },
+      "category": { "ar": "الإضاءة", "en": "Lighting" },
+      "price": 145,
+      "currency": "$",
+      "description": {
+        "ar": "مصباح LED قابل للتعتيم بدرجة حرارة لون متغيرة وهيكل ألمنيوم مؤكسد.",
+        "en": "Dimmable LED task lamp with adjustable color temperature and anodized aluminum arm."
+      },
+      "specs": {
+        "ar": ["3000K–5500K قابل للتعديل", "تعتيم باللمس", "كابل USB-C بطول 1.8م"],
+        "en": ["3000K-5500K tunable warm-cool", "Touch dimmer", "1.8m braided USB-C power"]
+      }
+    }
+  ],
+  "policies": [
+    {
+      "id": "shipping",
+      "category": "shipping",
+      "title": { "ar": "الشحن", "en": "Standard Shipping" },
+      "summary": { "ar": "2-4 أيام عمل", "en": "2-4 business days" },
+      "details": {
+        "ar": "تُشحن الطلبات خلال يوم عمل واحد مع رقم تتبع، والشحن مجاني فوق $90.",
+        "en": "Orders dispatch within 1 business day with tracking. Free standard shipping applies over $90."
+      }
+    },
+    {
+      "id": "returns",
+      "category": "returns",
+      "title": { "ar": "الإرجاع", "en": "30-Day Returns" },
+      "summary": { "ar": "إرجاع خلال 30 يوماً", "en": "30-day return window" },
+      "details": {
+        "ar": "يمكن إرجاع المنتجات غير التالفة داخل عبوتها الأصلية خلال 30 يوماً.",
+        "en": "Unused items in original packaging may be returned within 30 calendar days of delivery."
+      }
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-shipping-time",
+      "question": {
+        "ar": "كم يستغرق وصول الطلب؟",
+        "en": "How long does shipping take?"
+      },
+      "answer": {
+        "ar": "يستغرق الشحن القياسي عادةً من 2 إلى 4 أيام عمل بعد التجهيز.",
+        "en": "Standard shipping typically takes 2 to 4 business days after dispatch."
+      }
+    },
+    {
+      "id": "faq-warranty",
+      "question": {
+        "ar": "هل يوجد ضمان على المنتجات؟",
+        "en": "Do products include a warranty?"
+      },
+      "answer": {
+        "ar": "نعم، تشمل جميع المنتجات ضماناً لمدة عامين ضد عيوب التصنيع.",
+        "en": "Yes, all hardware products include a 2-year limited warranty against manufacturing defects."
+      }
+    },
+    {
+      "id": "faq-international",
+      "question": {
+        "ar": "هل يتوفر الشحن الدولي؟",
+        "en": "Do you ship internationally?"
+      },
+      "answer": {
+        "ar": "نوفر حالياً الشحن إلى الولايات المتحدة وكندا والمملكة المتحدة والاتحاد الأوروبي.",
+        "en": "We currently ship to the US, Canada, UK, and European Union."
+      }
+    }
+  ]
+}

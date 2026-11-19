@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Standalone HTML Embed Example — Support Chatbot</title>
+    <style>
+      /* Deliberately aggressive host styles to prove Shadow DOM isolation works */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 40px 24px;
+        font-family: Georgia, serif;
+        background: #fef3c7;
+        color: #1f2937;
+      }
+      button {
+        background: #dc2626 !important;
+        color: #ffffff !important;
+        border: 4px dashed #000000 !important;
+        border-radius: 0 !important;
+        font-size: 20px !important;
+        padding: 16px 24px !important;
+        cursor: pointer;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 28px;
+        border: 2px solid #1f2937;
+      }
+      code {
+        background: #f3f4f6;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Plain HTML Client Page</h1>
+      <p>
+        Notice how aggressive global <code>button</code> styles on this page turn the language toggle
+        button red with dashed borders, while the chatbot widget stays completely unaffected inside
+        its Shadow DOM boundary.
+      </p>
+      <button id="toggle-lang" type="button">Switch Widget to Arabic (RTL)</button>
+    </main>
+
+    <!--
+      Build the standalone bundle first:
+        npm --prefix chatbot/widget run build
+      Then serve this file alongside the chatbot backend (http://localhost:3001/api/chat).
+    -->
+    <script src="../../widget/dist/chatbot-widget.iife.js"></script>
+    <script>
+      let currentLang = 'en';
+
+      const handle = window.SupportChatbot.init({
+        config: {
+          assistantName: { en: 'Client Support', ar: 'دعم العملاء' },
+          assistantSubtitle: { en: 'Standalone HTML Embed', ar: 'تضمين HTML مستقل' },
+          welcomeMessage: {
+            en: 'Hi! Ask me anything from the client FAQ.',
+            ar: 'مرحباً! اسألني أي سؤال من الأسئلة الشائعة.',
+          },
+          primaryColor: '#1629D8',
+          theme: {
+            primaryColor: '#1629D8',
+            accentColor: '#B5F25B',
+            secondaryAccentColor: '#AE8CFF',
+          },
+          language: 'en',
+          position: 'bottom-right',
+          suggestedQuestions: {
+            en: ['What are your shipping times?', 'What is your return policy?'],
+            ar: ['ما مواعيد الشحن؟', 'ما هي سياسة الإرجاع؟'],
+          },
+          apiEndpoint: 'http://localhost:3001/api/chat',
+        },
+      });
+
+      document.getElementById('toggle-lang').addEventListener('click', function () {
+        currentLang = currentLang === 'en' ? 'ar' : 'en';
+        document.documentElement.lang = currentLang;
+        document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+        this.textContent =
+          currentLang === 'en' ? 'Switch Widget to Arabic (RTL)' : 'التبديل إلى الإنجليزية (LTR)';
+
+        handle.updateConfig({
+          language: currentLang,
+          position: currentLang === 'ar' ? 'bottom-left' : 'bottom-right',
+        });
+      });
+    </script>
+  </body>
+</html>
